@@ -255,4 +255,374 @@
     }
 
     /* Process */
-    #
+    #process {
+      background: #f8fafc;
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .process-step {
+      text-align: center;
+      padding: 30px 20px;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    }
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+            font-weight: 700;
+      font-size: 1.4rem;
+      color: var(--navy);
+    }
+    .process-step h3 {
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    /* Over ons */
+    #about {
+      text-align: center;
+    }
+    .about-content {
+      max-width: 750px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      line-height: 1.7;
+    }
+
+    /* Contact */
+    .contact-form {
+      max-width: 620px;
+      margin: 40px auto 0;
+    }
+    .form-group {
+      margin-bottom: 24px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 16px;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      transition: all 0.3s;
+    }
+    button[type="submit"] {
+      background: var(--navy);
+      color: white;
+      border: none;
+      padding: 18px 40px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    button[type="submit"]:hover {
+      background: #1e293b;
+      transform: translateY(-4px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 20px 60px;
+      background: var(--navy);
+      color: white;
+      font-size: 1rem;
+    }
+    .footer-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.7rem; }
+      .section-title { font-size: 2.0rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll progress -->
+  <div id="progress-container">
+    <div id="progress-bar"></div>
+  </div>
+
+  <!-- Demo Overlays -->
+  <div id="demo-bakkerij" class="demo-overlay">
+    <div class="demo-content">
+      <span class="close-demo" data-target="demo-bakkerij">&times;</span>
+      <div class="demo-header" style="background:var(--navy); color:white; padding:24px 40px; display:flex; justify-content:space-between; align-items:center;">
+        <div class="demo-logo" style="font-size:1.8rem; font-weight:700;">De Zoete Kruimel<span style="color:var(--gold)">.</span></div>
+        <div class="demo-nav" style="display:flex; gap:28px;">
+          <a href="#home" style="color:rgba(255,255,255,0.85); text-decoration:none; font-weight:500;">Home</a>
+          <a href="#menu" style="color:rgba(255,255,255,0.85); text-decoration:none; font-weight:500;">Menu</a>
+          <a href="#contact" style="color:rgba(255,255,255,0.85); text-decoration:none; font-weight:500;">Contact</a>
+        </div>
+      </div>
+      <div class="demo-hero" style="padding:80px 40px; text-align:center; background:linear-gradient(135deg, #f0f9ff, #e0f2fe);">
+        <h1 style="font-size:2.8rem; color:var(--navy); margin-bottom:16px;">Voorburg’s favoriete bakkerij sinds 1987</h1>
+        <p style="font-size:1.25rem; max-width:700px; margin:0 auto; color:var(--slate);">
+          Vers gebakken brood, taarten op bestelling en koffie van topkwaliteit — rechtstreeks uit onze oven in het centrum van Voorburg.
+        </p>
+      </div>
+      <div class="demo-section" id="menu" style="padding:60px 40px; max-width:1000px; margin:0 auto;">
+        <h2 style="text-align:center; color:var(--navy); margin-bottom:30px;">Ons menu</h2>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:24px;">
+          <div style="text-align:center; padding:20px; border:1px solid #e2e8f0; border-radius:12px;">
+            <h3 style="color:var(--navy); margin-bottom:10px;">Broodjes</h3>
+            <p>Kaas, ham, vegetarisch, ei — vers elke ochtend</p>
+          </div>
+          <div style="text-align:center; padding:20px; border:1px solid #e2e8f0; border-radius:12px;">
+            <h3 style="color:var(--navy); margin-bottom:10px;">Gebak</h3>
+            <p>Appeltaart, chocoladetaart, gevulde koeken</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="demo-garage" class="demo-overlay">
+    <div class="demo-content">
+      <span class="close-demo" data-target="demo-garage">&times;</span>
+      <div class="demo-header" style="background:var(--navy); color:white; padding:24px 40px; display:flex; justify-content:space-between; align-items:center;">
+        <div class="demo-logo" style="font-size:1.8rem; font-weight:700;">Garage Centrum<span style="color:var(--gold)">VBRG</span></div>
+        <div class="demo-nav" style="display:flex; gap:28px;">
+          <a href="#home" style="color:rgba(255,255,255,0.85); text-decoration:none; font-weight:500;">Home</a>
+          <a href="#diensten" style="color:rgba(255,255,255,0.85); text-decoration:none; font-weight:500;">Diensten</a>
+          <a href="#afspraak" style="color:rgba(255,255,255,0.85); text-decoration:none; font-weight:500;">Afspraak</a>
+        </div>
+      </div>
+      <div class="demo-hero" style="padding:80px 40px; text-align:center; background:linear-gradient(135deg, #f0f9ff, #e0f2fe);">
+        <h1 style="font-size:2.8rem; color:var(--navy); margin-bottom:16px;">Betrouwbaar onderhoud in Voorburg</h1>
+        <p style="font-size:1.25rem; max-width:700px; margin:0 auto; color:var(--slate);">
+          Keuring, reparatie, bandenwissel — snel, eerlijk en met garantie. Al 15 jaar dé garage voor Voorburg en omgeving.
+        </p>
+      </div>
+      <div class="demo-section" id="diensten" style="padding:60px 40px; max-width:1000px; margin:0 auto;">
+        <h2 style="text-align:center; color:var(--navy); margin-bottom:30px;">Onze diensten</h2>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:24px;">
+          <div style="text-align:center; padding:20px; border:1px solid #e2e8f0; border-radius:12px;">
+            <h3 style="color:var(--navy); margin-bottom:10px;">Keuring</h3>
+            <p>APK-keuring met 100% slagingspercentage</p>
+          </div>
+          <div style="text-align:center; padding:20px; border:1px solid #e2e8f0; border-radius:12px;">
+            <h3 style="color:var(--navy); margin-bottom:10px;">Reparatie</h3>
+            <p>Motor, remmen, elektrische systemen</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <header>
+    <div class="hero-bg-shape"></div>
+    <div class="hero-content">
+      <h1>Invictus<span style="color:var(--gold)">.</span></h1>
+      <p class="subtitle">We bouwen websites die werken — 24/7, zonder onderhoud, altijd klaar.</p>
+      <a href="#contact" class="btn">Laten we kennismaken</a>
+    </div>
+  </header>
+
+  <section id="team" class="fade-in">
+    <h2 class="section-title fade-in">Wij zijn Invictus</h2>
+    <div class="about-content fade-in">
+      <p>
+        <strong>Leon, Alexander en Esben</strong> — drie makers uit Voorburg die geloven in <em>onverslaanbare</em> websites:  
+        die werken, groeien en nooit opgeven.
+      </p>
+      <p style="margin-top:20px; font-style:italic; color:var(--navy); font-weight:600;">
+        “Invictus” betekent <em>onoverwinnelijk</em>. Niet omdat wij onverslaanbaar zijn —  
+        maar omdat <strong>uw online aanwezigheid dat moet zijn.</strong>
+      </p>
+    </div>
+  </section>
+
+  <section id="skills" class="skills fade-in">
+    <h2 class="section-title fade-in">Onze expertise</h2>
+    <div class="skills-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:30px; max-width:920px; margin:0 auto;">
+      <div class="skill-card fade-in" style="background:white; border-radius:14px; padding:28px 24px; text-align:center; box-shadow:0 6px 25px rgba(0,0,0,0.04); transition:all 0.5s;">
+        <span class="skill-icon" style="font-size:2.4rem; color:var(--gold); display:block; margin-bottom:18px;">🎨</span>
+        <h3 style="color:var(--navy); margin-bottom:12px; font-weight:600;">Straak Design</h3>
+        <p>Moden, intuïtieve websites die passen bij uw merkidentiteit.</p>
+      </div>
+      <div class="skill-card fade-in" style="background:white; border-radius:14px; padding:28px 24px; text-align:center; box-shadow:0 6px 25px rgba(0,0,0,0.04); transition:all 0.5s;">
+        <span class="skill-icon" style="font-size:2.4rem; color:var(--gold); display:block; margin-bottom:18px;">📱</span>
+        <h3 style="color:var(--navy); margin-bottom:12px; font-weight:600;">Volledig Mobiel</h3>
+        <p>Perfect op smartphones, tablets en laptops.</p>
+      </div>
+      <div class="skill-card fade-in" style="background:white; border-radius:14px; padding:28px 24px; text-align:center; box-shadow:0 6px 25px rgba(0,0,0,0.04); transition:all 0.5s;">
+        <span class="skill-icon" style="font-size:2.4rem; color:var(--gold); display:block; margin-bottom:18px;">⚡</span>
+        <h3 style="color:var(--navy); margin-bottom:12px; font-weight:600;">Razendsnel</h3>
+        <p>Geoptimaliseerd voor snelheid & SEO.</p>
+      </div>
+      <div class="skill-card fade-in" style="background:white; border-radius:14px; padding:28px 24px; text-align:center; box-shadow:0 6px 25px rgba(0,0,0,0.04); transition:all 0.5s;">
+        <span class="skill-icon" style="font-size:2.4rem; color:var(--gold); display:block; margin-bottom:18px;">🛠️</span>
+        <h3 style="color:var(--navy); margin-bottom:12px; font-weight:600;">Eenvoudig Beheer</h3>
+        <p>U leert zelf tekst en afbeeldingen aanpassen.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="portfolio fade-in">
+    <h2 class="section-title fade-in">Onze portfolio</h2>
+    <p style="text-align:center; max-width:700px; margin:0 auto 40px; font-size:1.1rem;">
+      Twee voorbeelden van wat we voor u kunnen bouwen — klik om een live demo te bekijken.
+    </p>
+    <div class="portfolio-grid">
+      <div class="portfolio-card fade-in" data-demo="demo-bakkerij">
+        <div class="portfolio-img">Bakkerij Website</div>
+        <div class="portfolio-overlay">
+          <h3>De Zoete Kruimel</h3>
+          <p>Voorburgse bakkerij met menu, openingstijden en contact.</p>
+          <div class="demo-btn">Demo bekijken</div>
+        </div>
+        <div class="portfolio-content">
+          <h3>De Zoete Kruimel</h3>
+          <p>Een warme, uitnodigende site — mobielvriendelijk en snel.</p>
+        </div>
+      </div>
+      <div class="portfolio-card fade-in" data-demo="demo-garage">
+        <div class="portfolio-img">Garage Website</div>
+        <div class="portfolio-overlay">
+          <h3>Garage Centrum Voorburg</h3>
+          <p>Diensten, afsprakenplanner en contact — helder en professioneel.</p>
+          <div class="demo-btn">Demo bekijken</div>
+        </div>
+        <div class="portfolio-content">
+          <h3>Garage Centrum Voorburg</h3>
+          <p>Efficiënte site gericht op conversie en vertrouwen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="fade-in">
+    <h2 class="section-title fade-in">Zo werken we</h2>
+    <div class="process-grid">
+      <div class="process-step fade-in">
+        <div class="step-number">1</div>
+        <h3>Kennismaken</h3>
+        <p>Geen verplichtingen — gewoon een vrijblijvend gesprek.</p>
+      </div>
+      <div class="process-step fade-in">
+        <div class="step-number">2</div>
+        <h3>Ontwerp & Opbouw</h3>
+        <p>Wij bouwen — u feedback. Elke stap transparant.</p>
+      </div>
+      <div class="process-step fade-in">
+        <div class="step-number">3</div>
+        <h3>Opleveren</h3>
+        <p>Uw site live, getest en klaar — met handleiding.</p>
+      </div>
+      <div class="process-step fade-in">
+        <div class="step-number">4</div>
+        <h3>Groei</h3>
+        <p>Wij blijven support geven — zodat uw site meegroeit.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact fade-in">
+    <h2 class="section-title fade-in">Laten we kennismaken</h2>
+    <p style="text-align: center; max-width: 680px; margin: 0 auto 40px; font-size: 1.15rem;">
+      Geen jargon, geen verplichtingen — gewoon een vrijblijvend gesprek.
+    </p>
+    
+    <form class="contact-form fade-in" action="https://formspree.io/f/YOUR-FORM-ID" method="POST">
+      <div class="form-group">
+        <input type="text" name="naam" placeholder="Uw naam" required>
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Uw e-mailadres" required>
+      </div>
+      <div class="form-group">
+        <textarea name="bericht" placeholder="Wat zoekt u? Bijv.: ‘Een site voor mijn kapperszaak’" rows="5" required></textarea>
+      </div>
+      <button type="submit">Stuur bericht</button>
+    </form>
+
+    <p style="text-align: center; margin-top: 30px; font-size: 1.05rem;">
+      📧 Of stuur een e-mail naar:  
+      <a href="mailto:contact@invictusweb.nl" style="color:var(--gold); text-decoration: none; font-weight: 600;">contact@invictusweb.nl</a>
+    </p>
+  </section>
+
+  <footer>
+    <p class="footer-title">Invictus</p>
+    <p>Gevestigd in Voorburg | Wereldwijd beschikbaar</p>
+    <p style="margin-top:15px; opacity:0.75;">
+      Leon • Alexander • Esben
+    </p>
+  </footer>
+
+  <script>
+    // Scroll progress
+    window.addEventListener('scroll', function() {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progress-bar').style.width = scrolled + '%';
+    });
+
+    // Scroll & click animations
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('appear');
+        });
+      }, { threshold: 0.15 });
+      
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+      document.querySelector('.hero-content').classList.add('appear');
+
+      // Portfolio demos
+      document.querySelectorAll('.portfolio-card').forEach(card => {
+        card.addEventListener('click', function() {
+          const demoId = this.getAttribute('data-demo');
+          document.getElementById(demoId).classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      // Close demos
+      document.querySelectorAll('.close-demo').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const target = this.getAttribute('data-target');
+          document.getElementById(target).classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      });
+
+      // Focus styling
+      document.querySelectorAll('input, textarea').forEach(el => {
+        el.addEventListener('focus', () => {
+          el.style.borderColor = 'var(--gold)';
+          el.style.boxShadow = '0 0 0 4px rgba(245, 158, 11, 0.25)';
+          el.style.transform = 'translateY(-2px)';
+        });
+        el.addEventListener('blur', () => {
+          el.style.borderColor = '#e2e8f0';
+          el.style.boxShadow = 'none';
+          el.style.transform = 'translateY(0)';
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
