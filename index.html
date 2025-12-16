@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Leon | Web Design for Ambitious Businesses</title>
+  <title>Leon | Websites voor Groeiende Bedrijven</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -14,6 +14,9 @@
       --gray: #94a3b8;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth; /* 🔑 ZACHT SCROLLEN TUSSEN ANKERS! */
+    }
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.6;
@@ -21,292 +24,433 @@
       background-color: #fff;
       overflow-x: hidden;
     }
+
+    /* Scroll progress indicator (optioneel, maar stijlvol) */
+    #progress-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #e2e8f0;
+      z-index: 1000;
+    }
+    #progress-bar {
+      height: 100%;
+      background: var(--gold);
+      width: 0%;
+      transition: width 0.2s ease;
+    }
+
     header {
       text-align: center;
-      padding: 100px 20px 80px;
+      padding: 120px 20px 100px;
       background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
       position: relative;
+      overflow: hidden;
     }
     .hero-content {
       max-width: 800px;
       margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    /* Lichte parallax-effect op hero */
+    .hero-bg-shape {
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: rgba(245, 158, 11, 0.05);
+      z-index: 1;
     }
     h1 {
-      font-size: 3.2rem;
+      font-size: 3.4rem;
       font-weight: 700;
       color: var(--navy);
       margin-bottom: 1rem;
       line-height: 1.1;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards 0.3s;
     }
     .subtitle {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       color: var(--slate);
-      max-width: 650px;
-      margin: 0 auto 2rem;
+      max-width: 680px;
+      margin: 0 auto 2.2rem;
       font-weight: 400;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards 0.5s;
     }
     .btn {
       display: inline-block;
       background: var(--navy);
       color: white;
-      padding: 14px 32px;
-      border-radius: 8px;
+      padding: 15px 36px;
+      border-radius: 10px;
       text-decoration: none;
       font-weight: 600;
       font-size: 1.05rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.18);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards 0.7s;
     }
     .btn:hover {
       background: #1e293b;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.2);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
     }
+
+    /* Scroll-animaties voor secties */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.appear {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     section {
-      padding: 80px 20px;
+      padding: 100px 20px;
       max-width: 1100px;
       margin: 0 auto;
     }
     .section-title {
       text-align: center;
-      font-size: 2.2rem;
+      font-size: 2.3rem;
       color: var(--navy);
-      margin-bottom: 50px;
+      margin-bottom: 55px;
       font-weight: 700;
+      opacity: 0;
+      transform: translateY(20px);
     }
-    /* Skills Section */
+
+    /* Expertise */
     .skills {
       background-color: #f8fafc;
     }
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 24px;
-      max-width: 900px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      max-width: 920px;
       margin: 0 auto;
     }
     .skill-card {
       background: white;
-      border-radius: 12px;
-      padding: 24px;
+      border-radius: 14px;
+      padding: 28px 24px;
       text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-      transition: transform 0.3s ease;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.04);
+      transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .skill-card.appear {
+      opacity: 1;
+      transform: translateY(0);
     }
     .skill-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.08);
     }
     .skill-icon {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       color: var(--gold);
-      margin-bottom: 16px;
+      margin-bottom: 18px;
+      display: block;
     }
     .skill-card h3 {
       color: var(--navy);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       font-weight: 600;
     }
+
     /* Portfolio */
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 36px;
     }
     .project-card {
-      border-radius: 12px;
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      transition: all 0.4s ease;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.09);
+      transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    .project-card.appear {
+      opacity: 1;
+      transform: translateY(0);
     }
     .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+      transform: translateY(-10px);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.14);
     }
     .project-img {
-      height: 200px;
+      height: 210px;
       background: linear-gradient(135deg, #cbd5e1, #94a3b8);
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      font-weight: 600;
+      font-weight: 700;
+      font-size: 1.3rem;
     }
     .project-content {
-      padding: 20px;
+      padding: 24px;
       background: white;
     }
     .project-content h3 {
       color: var(--navy);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
     }
-    /* About */
+
+    /* Over mij */
     .about-content {
-      max-width: 700px;
+      max-width: 720px;
       margin: 0 auto;
       text-align: center;
-      font-size: 1.1rem;
-      line-height: 1.7;
+      font-size: 1.12rem;
+      line-height: 1.75;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .about-content.appear {
+      opacity: 1;
+      transform: translateY(0);
     }
     .highlight {
       color: var(--navy);
       font-weight: 600;
     }
+
     /* Contact */
     .contact-form {
-      max-width: 600px;
-      margin: 40px auto 0;
+      max-width: 620px;
+      margin: 50px auto 0;
     }
     .form-group {
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
     input, textarea {
       width: 100%;
-      padding: 14px;
+      padding: 16px;
       border: 1px solid #e2e8f0;
-      border-radius: 8px;
+      border-radius: 10px;
       font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      transition: border 0.3s;
+      font-size: 1.02rem;
+      transition: all 0.3s;
     }
     input:focus, textarea:focus {
       outline: none;
       border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+      box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.25);
+      transform: translateY(-2px);
     }
     button[type="submit"] {
       background: var(--navy);
       color: white;
       border: none;
-      padding: 16px 36px;
-      border-radius: 8px;
+      padding: 18px 40px;
+      border-radius: 10px;
       font-weight: 600;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       cursor: pointer;
       width: 100%;
-      transition: all 0.3s;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    button[type="submit"].appear {
+      opacity: 1;
+      transform: translateY(0);
     }
     button[type="submit"]:hover {
       background: #1e293b;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.2);
     }
+
     footer {
       text-align: center;
-      padding: 40px 20px;
+      padding: 50px 20px 60px;
       background: var(--navy);
       color: white;
-      font-size: 0.95rem;
+      font-size: 1rem;
     }
+
+    /* Animaties */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     @media (max-width: 600px) {
-      h1 { font-size: 2.4rem; }
-      .section-title { font-size: 1.8rem; }
+      h1 { font-size: 2.5rem; }
+      .section-title { font-size: 1.9rem; }
+      section { padding: 70px 20px; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Scroll progress bar -->
+  <div id="progress-container">
+    <div id="progress-bar"></div>
+  </div>
+
   <header>
+    <div class="hero-bg-shape"></div>
     <div class="hero-content">
       <h1>Leon<span style="color:var(--gold)">.</span></h1>
-      <p class="subtitle">I craft elegant, high-performing websites for businesses ready to stand out — no fluff, just results.</p>
-      <a href="#contact" class="btn">Let’s Build Something Great</a>
+      <p class="subtitle">Ik ontwerp strakke, snelle websites voor bedrijven die online willen uitblinken — geen gedoe, wel resultaat.</p>
+      <a href="#contact" class="btn">Laten we samenwerken</a>
     </div>
   </header>
 
-  <section id="skills" class="skills">
-    <h2 class="section-title">My Craft</h2>
+  <section id="skills" class="skills fade-in">
+    <h2 class="section-title fade-in">Mijn expertise</h2>
     <div class="skills-grid">
-      <div class="skill-card">
-        <div class="skill-icon">🎨</div>
-        <h3>Clean Design</h3>
-        <p>Modern, intuitive interfaces that reflect your brand’s essence.</p>
+      <div class="skill-card fade-in">
+        <span class="skill-icon">🎨</span>
+        <h3>Straak Design</h3>
+        <p>Moden, intuïtieve websites die passen bij uw merkidentiteit.</p>
       </div>
-      <div class="skill-card">
-        <div class="skill-icon">📱</div>
-        <h3>Mobile-First</h3>
-        <p>Flawless on every device — phones, tablets, desktops.</p>
+      <div class="skill-card fade-in">
+        <span class="skill-icon">📱</span>
+        <h3>Volledig Mobiel</h3>
+        <p>Perfect op smartphones, tablets en laptops — geen klant verliezen.</p>
       </div>
-      <div class="skill-card">
-        <div class="skill-icon">⚡</div>
-        <h3>Blazing Fast</h3>
-        <p>Optimized for speed & SEO — because every second counts.</p>
+      <div class="skill-card fade-in">
+        <span class="skill-icon">⚡</span>
+        <h3>Razendsnel</h3>
+        <p>Geoptimaliseerd voor snelheid & SEO — want elke seconde telt.</p>
       </div>
-      <div class="skill-card">
-        <div class="skill-icon">🛠️</div>
-        <h3>Simple CMS</h3>
-        <p>I’ll show you how to update content — no developer needed.</p>
+      <div class="skill-card fade-in">
+        <span class="skill-icon">🛠️</span>
+        <h3>Eenvoudig Beheer</h3>
+        <p>U leert zelf tekst en afbeeldingen aanpassen — geen developer nodig.</p>
       </div>
     </div>
   </section>
 
-  <section id="portfolio" class="portfolio">
-    <h2 class="section-title">Recent Work</h2>
+  <section id="portfolio" class="portfolio fade-in">
+    <h2 class="section-title fade-in">Recente projecten</h2>
     <div class="portfolio-grid">
-      <div class="project-card">
-        <div class="project-img">Bakery Website</div>
+      <div class="project-card fade-in">
+        <div class="project-img">Bakkerij Website</div>
         <div class="project-content">
-          <h3>Sweet Crust Bakery</h3>
-          <p>Menu, hours, gallery & contact form — 100% mobile-optimized.</p>
+          <h3>De Zoete Kruimel</h3>
+          <p>Menu, openingstijden, galerij en contactformulier — 100% mobiel.</p>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-img">Auto Repair</div>
+      <div class="project-card fade-in">
+        <div class="project-img">Garage</div>
         <div class="project-content">
-          <h3>Precision Auto</h3>
-          <p>Service listings, appointment request, and Google Maps.</p>
+          <h3>AutoService Centrum</h3>
+          <p>Diensten, afsprakenplanner en Google Maps integratie.</p>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-img">Dental Clinic</div>
+      <div class="project-card fade-in">
+        <div class="project-img">Tandartspraktijk</div>
         <div class="project-content">
-          <h3>SmileCare Dental</h3>
-          <p>Trust-focused design with online booking integration.</p>
+          <h3>Tandzorg Plus</h3>
+          <p>Betrouwbaar design met online afsprakenmogelijkheid.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="about" class="about">
-    <h2 class="section-title">About Me</h2>
-    <div class="about-content">
+  <section id="about" class="about fade-in">
+    <h2 class="section-title fade-in">Over mij</h2>
+    <div class="about-content fade-in">
       <p>
-        I’m Leon — a detail-oriented web designer who believes every business deserves a website that <span class="highlight">works as hard as you do</span>.
+        Ik ben Leon — een detailgerichte webdesigner uit <strong>Voorburg</strong>, die gelooft dat elk bedrijf een website verdient die <span class="highlight">net zo hard werkt als uzelf</span>.
       </p>
-      <p style="margin-top: 16px;">
-        I focus on <span class="highlight">clarity, speed, and simplicity</span> — because your website shouldn’t confuse customers or slow you down.
+      <p style="margin-top: 18px;">
+        Ik richt me op <span class="highlight">duidelijkheid, snelheid en eenvoud</span> — want uw website mag klanten niet verwarren of afremmen.
       </p>
-      <p style="margin-top: 16px; font-style: italic;">
-        “Your digital front door should welcome people in — not make them search for the handle.”
+      <p style="margin-top: 18px; font-style: italic;">
+        “Uw digitale entree moet gasten binnenlaten — niet laten zoeken naar de deurknop.”
       </p>
     </div>
   </section>
 
-  <section id="contact" class="contact">
-    <h2 class="section-title">Let’s Talk</h2>
+  <section id="contact" class="contact fade-in">
+    <h2 class="section-title fade-in">Neem contact op</h2>
     <p style="text-align: center; max-width: 600px; margin: 0 auto 30px;">
-      Have a project in mind? Get in touch — I respond within 24 hours.
+      Heeft u een project in gedachten? Stuur een bericht — ik reageer binnen 24 uur.
     </p>
     
-    <form class="contact-form" action="https://formspree.io/f/YOUR-FORM-ID" method="POST">
+    <form class="contact-form fade-in" action="https://formspree.io/f/YOUR-FORM-ID" method="POST">
       <div class="form-group">
-        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="text" name="naam" placeholder="Uw naam" required>
       </div>
       <div class="form-group">
-        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="email" name="email" placeholder="Uw e-mailadres" required>
       </div>
       <div class="form-group">
-        <textarea name="message" placeholder="Tell me about your business & goals" rows="4" required></textarea>
+        <textarea name="bericht" placeholder="Vertel me over uw bedrijf en doelen" rows="4" required></textarea>
       </div>
-      <button type="submit">Send Message</button>
+      <button type="submit" class="fade-in">Verstuur bericht</button>
     </form>
 
-    <p style="text-align: center; margin-top: 24px;">
-      📧 Or email directly: <a href="mailto:leon.webdesign@gmail.com" style="color: var(--gold); text-decoration: none;">leon.webdesign@gmail.com</a>
+    <p style="text-align: center; margin-top: 26px;">
+      📧 Of stuur een e-mail naar: <a href="mailto:leon.webdesign@gmail.com" style="color: var(--gold); text-decoration: none;">leon.webdesign@gmail.com</a>
     </p>
   </section>
 
   <footer>
-    <p>© 2025 Leon | Web Design for Ambitious Businesses</p>
-    <p style="margin-top: 8px; opacity: 0.8;">Based in [Your City] | Serving clients worldwide</p>
+    <p>© 2025 Leon | Websites voor Groeiende Bedrijven</p>
+    <p style="margin-top: 10px; opacity: 0.85;">Gevestigd in Voorburg | Wereldwijd beschikbaar</p>
   </footer>
+
+  <script>
+    // Scroll progress bar
+    window.addEventListener('scroll', function() {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progress-bar').style.width = scrolled + '%';
+    });
+
+    // Scroll animations
+    document.addEventListener('DOMContentLoaded', function() {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('appear');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Zorg dat de hero-content altijd zichtbaar is
+      document.querySelector('.hero-content').classList.add('appear');
+    });
+  </script>
 
 </body>
 </html>
