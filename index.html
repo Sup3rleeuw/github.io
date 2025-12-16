@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Leon | Websites voor Groeiende Bedrijven</title>
+  <title>Invictus | Websites die nooit opgeven</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -121,28 +121,28 @@
       z-index: 2;
     }
     h1 {
-      font-size: 3.4rem;
+      font-size: 3.6rem;
       font-weight: 700;
       color: var(--navy);
       margin-bottom: 1rem;
       line-height: 1.1;
     }
     .subtitle {
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       color: var(--slate);
-      max-width: 680px;
-      margin: 0 auto 2.2rem;
+      max-width: 700px;
+      margin: 0 auto 2.4rem;
       font-weight: 400;
     }
     .btn {
       display: inline-block;
       background: var(--navy);
       color: white;
-      padding: 15px 36px;
+      padding: 16px 40px;
       border-radius: 10px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
       box-shadow: 0 6px 18px rgba(15, 23, 42, 0.18);
     }
@@ -169,9 +169,9 @@
     }
     .section-title {
       text-align: center;
-      font-size: 2.3rem;
+      font-size: 2.4rem;
       color: var(--navy);
-      margin-bottom: 55px;
+      margin-bottom: 60px;
       font-weight: 700;
     }
 
@@ -248,315 +248,11 @@
       font-size: 1.4rem;
     }
 
-    /* Demo pagina's styling */
-    .demo-header {
-      background: var(--navy);
-      color: white;
-      padding: 24px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .demo-logo {
-      font-size: 1.8rem;
-      font-weight: 700;
-    }
-    .demo-logo span { color: var(--gold); }
-    .demo-nav a {
-      color: rgba(255,255,255,0.85);
-      margin-left: 28px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .demo-hero {
-      padding: 80px 40px;
+    /* Team */
+    #team {
       text-align: center;
-      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-    }
-    .demo-hero h1 {
-      font-size: 2.8rem;
-      color: var(--navy);
-      margin-bottom: 16px;
-    }
-    .demo-hero p {
-      font-size: 1.25rem;
-      max-width: 700px;
-      margin: 0 auto;
-      color: var(--slate);
-    }
-    .demo-section {
-      padding: 60px 40px;
-      max-width: 1000px;
-      margin: 0 auto;
+      background: #f8fafc;
     }
 
-    /* Over mij, contact, footer — same as before */
-    .skills, .about, .contact, footer { /* styles unchanged */ }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 2.5rem; }
-      .section-title { font-size: 1.9rem; }
-      .demo-header { padding: 18px; flex-direction: column; gap: 12px; }
-      .demo-nav { margin-top: 10px; }
-      .demo-nav a { margin: 0 12px; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Scroll progress -->
-  <div id="progress-container">
-    <div id="progress-bar"></div>
-  </div>
-
-  <!-- Demo Overlays -->
-  <!-- Demo 1: Bakkerij -->
-  <div id="demo-bakkerij" class="demo-overlay">
-    <div class="demo-content">
-      <span class="close-demo" data-target="demo-bakkerij">&times;</span>
-      <div class="demo-header">
-        <div class="demo-logo">De Zoete Kruimel<span>.</span></div>
-        <div class="demo-nav">
-          <a href="#home">Home</a>
-          <a href="#menu">Menu</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </div>
-      <div class="demo-hero">
-        <h1>Voorburg’s favoriete bakkerij sinds 1987</h1>
-        <p>Vers gebakken brood, taarten op bestelling en koffie van topkwaliteit — rechtstreeks uit onze oven in het centrum van Voorburg.</p>
-      </div>
-      <div class="demo-section" id="menu">
-        <h2 style="text-align:center; color:var(--navy); margin-bottom:30px;">Ons menu</h2>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:24px;">
-          <div style="text-align:center; padding:20px; border:1px solid #e2e8f0; border-radius:12px;">
-            <h3 style="color:var(--navy); margin-bottom:10px;">Broodjes</h3>
-            <p>Kaas, ham, vegetarisch, ei — vers elke ochtend</p>
-          </div>
-          <div style="text-align:center; padding:20px; border:1px solid #e2e8f0; border-radius:12px;">
-            <h3 style="color:var(--navy); margin-bottom:10px;">Gebak</h3>
-            <p>Appeltaart, chocoladetaart, gevulde koeken</p>
-          </div>
-        </div>
-      </div>
-      <div class="demo-section" id="contact">
-        <h2 style="text-align:center; color:var(--navy); margin-bottom:30px;">Bezoek ons</h2>
-        <div style="text-align:center;">
-          <p><strong>Adres:</strong> Stationsweg 12, 2271 CB Voorburg</p>
-          <p><strong>Open:</strong> ma–za 7:00–18:00, zo 8:00–15:00</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Demo 2: Garage -->
-  <div id="demo-garage" class="demo-overlay">
-    <div class="demo-content">
-      <span class="close-demo" data-target="demo-garage">&times;</span>
-      <div class="demo-header">
-        <div class="demo-logo">Garage Centrum<span>VBRG</span></div>
-        <div class="demo-nav">
-          <a href="#home">Home</a>
-          <a href="#diensten">Diensten</a>
-          <a href="#afspraak">Afspraak</a>
-        </div>
-      </div>
-      <div class="demo-hero">
-        <h1>Betrouwbaar onderhoud in Voorburg</h1>
-        <p>Keuring, reparatie, bandenwissel — snel, eerlijk en met garantie. Al 15 jaar dé garage voor Voorburg en omgeving.</p>
-      </div>
-      <div class="demo-section" id="diensten">
-        <h2 style="text-align:center; color:var(--navy); margin-bottom:30px;">Onze diensten</h2>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:24px;">
-          <div style="text-align:center; padding:20px; border:1px solid #e2e8f0; border-radius:12px;">
-            <h3 style="color:var(--navy); margin-bottom:10px;">Keuring</h3>
-            <p>APK-keuring met 100% slagingspercentage</p>
-          </div>
-          <div style="text-align:center; padding:20px; border:1px solid #e2e8f0; border-radius:12px;">
-            <h3 style="color:var(--navy); margin-bottom:10px;">Reparatie</h3>
-            <p>Motor, remmen, elektrische systemen</p>
-          </div>
-        </div>
-      </div>
-      <div class="demo-section" id="afspraak">
-        <h2 style="text-align:center; color:var(--navy); margin-bottom:30px;">Maak een afspraak</h2>
-        <div style="max-width:500px; margin:0 auto; background:#f8fafc; padding:24px; border-radius:12px;">
-          <p style="text-align:center; margin-bottom:20px;">Bel: <strong>070 123 4567</strong><br>of vul onderstaand formulier in.</p>
-          <input type="text" placeholder="Uw naam" style="width:100%; padding:12px; margin-bottom:12px; border:1px solid #cbd5e1; border-radius:8px;">
-          <input type="tel" placeholder="Telefoonnummer" style="width:100%; padding:12px; margin-bottom:12px; border:1px solid #cbd5e1; border-radius:8px;">
-          <button style="width:100%; padding:14px; background:var(--gold); border:none; border-radius:8px; font-weight:600; color:var(--navy);">Verstuur</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MAIN CONTENT -->
-  <header>
-    <div class="hero-bg-shape"></div>
-    <div class="hero-content">
-      <h1>Leon<span style="color:var(--gold)">.</span></h1>
-      <p class="subtitle">Ik ontwerp strakke, snelle websites voor bedrijven die online willen uitblinken — geen gedoe, wel resultaat.</p>
-      <a href="#contact" class="btn">Laten we samenwerken</a>
-    </div>
-  </header>
-
-  <section id="skills" class="skills fade-in">
-    <h2 class="section-title fade-in">Mijn expertise</h2>
-    <div class="skills-grid">
-      <!-- (skills unchanged — keep your current ones) -->
-      <div class="skill-card fade-in">
-        <span class="skill-icon">🎨</span>
-        <h3>Straak Design</h3>
-        <p>Moden, intuïtieve websites die passen bij uw merkidentiteit.</p>
-      </div>
-      <div class="skill-card fade-in">
-        <span class="skill-icon">📱</span>
-        <h3>Volledig Mobiel</h3>
-        <p>Perfect op smartphones, tablets en laptops — geen klant verliezen.</p>
-      </div>
-      <div class="skill-card fade-in">
-        <span class="skill-icon">⚡</span>
-        <h3>Razendsnel</h3>
-        <p>Geoptimaliseerd voor snelheid & SEO — want elke seconde telt.</p>
-      </div>
-      <div class="skill-card fade-in">
-        <span class="skill-icon">🛠️</span>
-        <h3>Eenvoudig Beheer</h3>
-        <p>U leert zelf tekst en afbeeldingen aanpassen — geen developer nodig.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PORTFOLIO SECTION -->
-  <section id="portfolio" class="portfolio fade-in">
-    <h2 class="section-title fade-in">Mijn portfolio</h2>
-    <p style="text-align:center; max-width:700px; margin:0 auto 40px; font-size:1.1rem; color:var(--slate);">
-      Hier zie je twee voorbeelden van wat ik voor uw bedrijf kan bouwen — klik op een kaart om een live demo te bekijken.
-    </p>
-    <div class="portfolio-grid">
-      <!-- Bakkerij -->
-      <div class="portfolio-card fade-in" data-demo="demo-bakkerij">
-        <div class="portfolio-img">Bakkerij Website</div>
-        <div class="portfolio-overlay">
-          <h3>De Zoete Kruimel</h3>
-          <p>Voorburgse bakkerij met menu, openingstijden en contactformulier.</p>
-          <div class="demo-btn">Demo bekijken</div>
-        </div>
-        <div class="portfolio-content">
-          <h3>De Zoete Kruimel</h3>
-          <p>Een warme, uitnodigende site voor een lokale bakkerij — mobielvriendelijk en snel.</p>
-        </div>
-      </div>
-
-      <!-- Garage -->
-      <div class="portfolio-card fade-in" data-demo="demo-garage">
-        <div class="portfolio-img">Garage Website</div>
-        <div class="portfolio-overlay">
-          <h3>Garage Centrum Voorburg</h3>
-          <p>Diensten, afsprakenplanner en contact — helder en professioneel.</p>
-          <div class="demo-btn">Demo bekijken</div>
-        </div>
-        <div class="portfolio-content">
-          <h3>Garage Centrum Voorburg</h3>
-          <p>Efficiënte site voor een lokaal bedrijf — gericht op conversie en vertrouwen.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="about fade-in">
-    <h2 class="section-title fade-in">Over mij</h2>
-    <div class="about-content fade-in">
-      <p>
-        Ik ben Leon — een detailgerichte webdesigner uit <strong>Voorburg</strong>, die gelooft dat elk bedrijf een website verdient die <span class="highlight">net zo hard werkt als uzelf</span>.
-      </p>
-      <p style="margin-top: 18px;">
-        Ik richt me op <span class="highlight">duidelijkheid, snelheid en eenvoud</span> — want uw website mag klanten niet verwarren of afremmen.
-      </p>
-      <p style="margin-top: 18px; font-style: italic;">
-        “Uw digitale entree moet gasten binnenlaten — niet laten zoeken naar de deurknop.”
-      </p>
-    </div>
-  </section>
-
-  <section id="contact" class="contact fade-in">
-    <h2 class="section-title fade-in">Neem contact op</h2>
-    <p style="text-align: center; max-width: 600px; margin: 0 auto 30px;">
-      Heeft u een project in gedachten? Stuur een bericht — ik reageer binnen 24 uur.
-    </p>
-    
-    <form class="contact-form fade-in" action="https://formspree.io/f/YOUR-FORM-ID" method="POST">
-      <div class="form-group">
-        <input type="text" name="naam" placeholder="Uw naam" required>
-      </div>
-      <div class="form-group">
-        <input type="email" name="email" placeholder="Uw e-mailadres" required>
-      </div>
-      <div class="form-group">
-        <textarea name="bericht" placeholder="Vertel me over uw bedrijf en doelen" rows="4" required></textarea>
-      </div>
-      <button type="submit" class="fade-in">Verstuur bericht</button>
-    </form>
-
-    <p style="text-align: center; margin-top: 26px;">
-      📧 Of stuur een e-mail naar: <a href="mailto:leon.webdesign@gmail.com" style="color: var(--gold); text-decoration: none;">leon.webdesign@gmail.com</a>
-    </p>
-  </section>
-
-  <footer>
-    <p>© 2025 Leon | Websites voor Groeiende Bedrijven</p>
-    <p style="margin-top: 10px; opacity: 0.85;">Gevestigd in Voorburg | Wereldwijd beschikbaar</p>
-  </footer>
-
-  <script>
-    // Scroll progress
-    window.addEventListener('scroll', function() {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      document.getElementById('progress-bar').style.width = scrolled + '%';
-    });
-
-    // Scroll animations
-    document.addEventListener('DOMContentLoaded', function() {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('appear');
-        });
-      }, { threshold: 0.15 });
-      
-      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-      document.querySelector('.hero-content').classList.add('appear');
-
-      // Portfolio demo triggers
-      document.querySelectorAll('.portfolio-card').forEach(card => {
-        card.addEventListener('click', function() {
-          const demoId = this.getAttribute('data-demo');
-          document.getElementById(demoId).classList.add('active');
-          document.body.style.overflow = 'hidden';
-        });
-      });
-
-      // Close demos
-      document.querySelectorAll('.close-demo').forEach(btn => {
-        btn.addEventListener('click', function() {
-          const target = this.getAttribute('data-target');
-          document.getElementById(target).classList.remove('active');
-          document.body.style.overflow = '';
-        });
-      });
-
-      // Close on ESC
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-          document.querySelectorAll('.demo-overlay.active').forEach(el => {
-            el.classList.remove('active');
-            document.body.style.overflow = '';
-          });
-        }
-      });
-    });
-  </script>
-
-</body>
-</html>
+    /* Process */
+    #
