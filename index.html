@@ -484,31 +484,84 @@
     </div>
   </section>
 
-  <section id="skills" class="skills fade-in">
+   <section id="skills" class="skills fade-in">
     <h2 class="section-title fade-in">Onze expertise</h2>
     <div class="skills-grid">
       <div class="skill-card fade-in">
         <span class="skill-icon">🎨</span>
         <h3>Strak Design</h3>
-        <p>Moden, intuïtieve websites die passen bij uw merkidentiteit — zonder frutsels, alleen essentie.</p>
+        <p>Geen franje, alleen essentie. Een site die past bij wie u bent — en wie u wilt bereiken.</p>
       </div>
       <div class="skill-card fade-in">
         <span class="skill-icon">📱</span>
         <h3>Volledig Mobiel</h3>
-        <p>Perfect op smartphones, tablets en laptops — want 80% van uw klanten bezoekt u via hun telefoon.</p>
+        <p>80% van uw klanten bezoekt u via de telefoon. Wij zorgen dat ze blijven.</p>
       </div>
       <div class="skill-card fade-in">
         <span class="skill-icon">⚡</span>
         <h3>Razendsnel</h3>
-        <p>Geoptimaliseerd voor snelheid & comfort — want elke seconde telt. Geen wachten, alleen resultaat.</p>
+        <p>Geen wachten, geen frustratie. Alles geoptimaliseerd voor snelheid én Google.</p>
       </div>
       <div class="skill-card fade-in">
         <span class="skill-icon">🛠️</span>
         <h3>Eenvoudig Beheer</h3>
-        <p>U leert zelf tekst en afbeeldingen aanpassen — geen developer nodig. We geven u een eenvoudige handleiding.</p>
+        <p>U past zelf tekst en foto’s aan — zonder technische kennis. Wij leren het u in 10 minuten.</p>
       </div>
     </div>
   </section>
+
+  <style>
+    /* Voeg deze CSS toe onderaan je bestaande <style>-tag (of vervang de oude .skills-grid en .skill-card) */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .skill-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      border: 1px solid #f1f5f9;
+    }
+    .skill-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    }
+    .skill-icon {
+      display: inline-block;
+      width: 64px;
+      height: 64px;
+      background: rgba(245, 158, 11, 0.12);
+      border-radius: 50%;
+      line-height: 64px;
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .skill-card h3 {
+      color: var(--navy);
+      margin-bottom: 14px;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+    .skill-card p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--slate);
+    }
+
+    /* Mobiel: 1 kolom */
+    @media (max-width: 768px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 
   <section id="portfolio" class="portfolio fade-in">
     <h2 class="section-title fade-in">Onze portfolio</h2>
