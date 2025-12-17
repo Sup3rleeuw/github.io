@@ -293,33 +293,45 @@
     /* Expertise (2x2) */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      max-width: 920px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      max-width: 800px;
       margin: 0 auto;
     }
     .skill-card {
       background: white;
-      border-radius: 14px;
-      padding: 28px 24px;
+      border-radius: 16px;
+      padding: 32px 24px;
       text-align: center;
-      box-shadow: 0 6px 25px rgba(0,0,0,0.04);
-      transition: all 0.5s;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      border: 1px solid #f1f5f9;
     }
     .skill-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
     }
     .skill-icon {
-      font-size: 2.4rem;
+      display: inline-block;
+      width: 64px;
+      height: 64px;
+      background: rgba(245, 158, 11, 0.12);
+      border-radius: 50%;
+      line-height: 64px;
+      font-size: 1.8rem;
       color: var(--gold);
-      margin-bottom: 18px;
-      display: block;
+      margin-bottom: 20px;
     }
     .skill-card h3 {
       color: var(--navy);
-      margin-bottom: 12px;
-      font-weight: 600;
+      margin-bottom: 14px;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+    .skill-card p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--slate);
     }
 
     /* Over ons */
@@ -380,83 +392,29 @@
       margin-bottom: 8px;
     }
 
+    @media (max-width: 768px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
     @media (max-width: 600px) {
       h1 { font-size: 2.7rem; }
       .section-title { font-size: 2.0rem; }
     }
   </style>
 </head>
-<body>
+<body id="top">
 
   <!-- Scroll progress -->
   <div id="progress-container">
     <div id="progress-bar"></div>
   </div>
 
-  <!-- Demo Overlays -->
-  <div id="demo-bakkerij" class="demo-overlay">
-    <div class="demo-content">
-      <span class="close-demo" data-target="demo-bakkerij">&times;</span>
-      <div class="demo-header" style="background:var(--navy); color:white; padding:24px 40px; display:flex; justify-content:space-between; align-items:center;">
-        <div class="demo-logo" style="font-size:1.8rem; font-weight:700;">De Zoete Kruimel<span style="color:var(--gold)">.</span></div>
-        <div class="demo-nav" style="display:flex; gap:28px;">
-          <a href="#home" style="color:rgba(255,255,255,0.85); text-decoration:none; font-weight:500;">Home</a>
-          <a href="#menu" style="color:rgba(255,255,255,0.85); text-decoration:none; font-weight:500;">Menu</a>
-          <a href="#contact" style="color:rgba(255,255,255,0.85); text-decoration:none; font-weight:500;">Contact</a>
-        </div>
-      </div>
-      <div class="demo-hero" style="padding:80px 40px; text-align:center; background:linear-gradient(135deg, #f0f9ff, #e0f2fe);">
-        <h1 style="font-size:2.8rem; color:var(--navy); margin-bottom:16px;">Voorburg’s favoriete bakkerij sinds 1987</h1>
-        <p style="font-size:1.25rem; max-width:700px; margin:0 auto; color:var(--slate);">
-          Vers gebakken brood, taarten op bestelling en koffie van topkwaliteit — rechtstreeks uit onze oven in het centrum van Voorburg.
-        </p>
-      </div>
-      <div class="demo-section" id="menu" style="padding:60px 40px; max-width:1000px; margin:0 auto;">
-        <h2 style="text-align:center; color:var(--navy); margin-bottom:30px;">Ons menu</h2>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:24px;">
-          <div style="text-align:center; padding:20px; border:1px solid #e2e8f0; border-radius:12px;">
-            <h3 style="color:var(--navy); margin-bottom:10px;">Broodjes</h3>
-            <p>Kaas, ham, vegetarisch, ei — vers elke ochtend</p>
-          </div>
-          <div style="text-align:center; padding:20px; border:1px solid #e2e8f0; border-radius:12px;">
-            <h3 style="color:var(--navy); margin-bottom:10px;">Gebak</h3>
-            <p>Appeltaart, chocoladetaart, gevulde koeken</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="demo-garage" class="demo-overlay">
-    <div class="demo-content">
-      <span class="close-demo" data-target="demo-garage">&times;</span>
-      <div class="demo-header" style="background:var(--navy); color:white; padding:24px 40px; display:flex; justify-content:space-between; align-items:center;">
-        <div class="demo-logo" style="font-size:1.8rem; font-weight:700;">Garage Centrum<span style="color:var(--gold)">VBRG</span></div>
-        <div class="demo-nav" style="display:flex; gap:28px;">
-          <a href="#home" style="color:rgba(255,255,255,0.85); text-decoration:none; font-weight:500;">Home</a>
-          <a href="#diensten" style="color:rgba(255,255,255,0.85); text-decoration:none; font-weight:500;">Diensten</a>
-          <a href="#afspraak" style="color:rgba(255,255,255,0.85); text-decoration:none; font-weight:500;">Afspraak</a>
-        </div>
-      </div>
-      <div class="demo-hero" style="padding:80px 40px; text-align:center; background:linear-gradient(135deg, #f0f9ff, #e0f2fe);">
-        <h1 style="font-size:2.8rem; color:var(--navy); margin-bottom:16px;">Betrouwbaar onderhoud in Voorburg</h1>
-        <p style="font-size:1.25rem; max-width:700px; margin:0 auto; color:var(--slate);">
-          Keuring, reparatie, bandenwissel — snel, eerlijk en met garantie. Al 15 jaar dé garage voor Voorburg en omgeving.
-        </p>
-      </div>
-      <div class="demo-section" id="diensten" style="padding:60px 40px; max-width:1000px; margin:0 auto;">
-        <h2 style="text-align:center; color:var(--navy); margin-bottom:30px;">Onze diensten</h2>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:24px;">
-          <div style="text-align:center; padding:20px; border:1px solid #e2e8f0; border-radius:12px;">
-            <h3 style="color:var(--navy); margin-bottom:10px;">Keuring</h3>
-            <p>APK-keuring met 100% slagingspercentage</p>
-          </div>
-          <div style="text-align:center; padding:20px; border:1px solid #e2e8f0; border-radius:12px;">
-            <h3 style="color:var(--navy); margin-bottom:10px;">Reparatie</h3>
-            <p>Motor, remmen, elektrische systemen</p>
-          </div>
-        </div>
-      </div>
+  <!-- Demo Sushi -->
+  <div id="demo-sushi" class="demo-overlay">
+    <div class="demo-content" style="height:95vh; overflow:auto;">
+      <span class="close-demo" data-target="demo-sushi">&times;</span>
+      <iframe src="./sushi.html" style="width:100%; height:100%; border:none;"></iframe>
     </div>
   </div>
 
@@ -484,7 +442,7 @@
     </div>
   </section>
 
-   <section id="skills" class="skills fade-in">
+  <section id="skills" class="skills fade-in">
     <h2 class="section-title fade-in">Onze expertise</h2>
     <div class="skills-grid">
       <div class="skill-card fade-in">
@@ -510,87 +468,23 @@
     </div>
   </section>
 
-  <style>
-    /* Voeg deze CSS toe onderaan je bestaande <style>-tag (of vervang de oude .skills-grid en .skill-card) */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .skill-card {
-      background: white;
-      border-radius: 16px;
-      padding: 32px 24px;
-      text-align: center;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-      border: 1px solid #f1f5f9;
-    }
-    .skill-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
-    }
-    .skill-icon {
-      display: inline-block;
-      width: 64px;
-      height: 64px;
-      background: rgba(245, 158, 11, 0.12);
-      border-radius: 50%;
-      line-height: 64px;
-      font-size: 1.8rem;
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
-    .skill-card h3 {
-      color: var(--navy);
-      margin-bottom: 14px;
-      font-weight: 700;
-      font-size: 1.3rem;
-    }
-    .skill-card p {
-      font-size: 1.05rem;
-      line-height: 1.6;
-      color: var(--slate);
-    }
-
-    /* Mobiel: 1 kolom */
-    @media (max-width: 768px) {
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-
+  <!-- ✅ NIEUW: Portfolio-sectie -->
   <section id="portfolio" class="portfolio fade-in">
-    <h2 class="section-title fade-in">Onze portfolio</h2>
+    <h2 class="section-title fade-in">Zo bouwen wij</h2>
     <p style="text-align:center; max-width:700px; margin:0 auto 40px; font-size:1.1rem;">
-      Twee voorbeelden van wat we voor u kunnen bouwen — klik om een live demo te bekijken.
+      Klik op de kaart om een live demo te bekijken.
     </p>
     <div class="portfolio-grid">
-      <div class="portfolio-card fade-in" data-demo="demo-bakkerij">
-        <div class="portfolio-img">Bakkerij Website</div>
+      <div class="portfolio-card fade-in" data-demo="demo-sushi">
+        <div class="portfolio-img">Sushi Restaurant</div>
         <div class="portfolio-overlay">
-          <h3>De Zoete Kruimel</h3>
-          <p>Voorburgse bakkerij met menu, openingstijden en contact.</p>
+          <h3>Sushi Noor</h3>
+          <p>Modern Japanse keuken — volledig werkend demo.</p>
           <div class="demo-btn">Demo bekijken</div>
         </div>
         <div class="portfolio-content">
-          <h3>De Zoete Kruimel</h3>
-          <p>Een warme, uitnodigende site — mobielvriendelijk en snel.</p>
-        </div>
-      </div>
-      <div class="portfolio-card fade-in" data-demo="demo-garage">
-        <div class="portfolio-img">Garage Website</div>
-        <div class="portfolio-overlay">
-          <h3>Garage Centrum Voorburg</h3>
-          <p>Diensten, afsprakenplanner en contact — helder en professioneel.</p>
-          <div class="demo-btn">Demo bekijken</div>
-        </div>
-        <div class="portfolio-content">
-          <h3>Garage Centrum Voorburg</h3>
-          <p>Efficiënte site gericht op conversie en vertrouwen.</p>
+          <h3>Sushi Noor</h3>
+          <p>Een strakke, donkere site met menu-filter, reserveringsformulier en mobiele navigatie.</p>
         </div>
       </div>
     </div>
