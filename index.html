@@ -260,7 +260,7 @@
     }
     .process-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
       max-width: 1000px;
       margin: 0 auto;
@@ -281,13 +281,45 @@
       align-items: center;
       justify-content: center;
       margin: 0 auto 20px;
-            font-weight: 700;
+      font-weight: 700;
       font-size: 1.4rem;
       color: var(--navy);
     }
     .process-step h3 {
       color: var(--navy);
       margin-bottom: 12px;
+    }
+
+    /* Expertise (2x2) */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .skill-card {
+      background: white;
+      border-radius: 14px;
+      padding: 28px 24px;
+      text-align: center;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.04);
+      transition: all 0.5s;
+    }
+    .skill-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+    }
+    .skill-icon {
+      font-size: 2.4rem;
+      color: var(--gold);
+      margin-bottom: 18px;
+      display: block;
+    }
+    .skill-card h3 {
+      color: var(--navy);
+      margin-bottom: 12px;
+      font-weight: 600;
     }
 
     /* Over ons */
@@ -454,26 +486,26 @@
 
   <section id="skills" class="skills fade-in">
     <h2 class="section-title fade-in">Onze expertise</h2>
-    <div class="skills-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:30px; max-width:920px; margin:0 auto;">
-      <div class="skill-card fade-in" style="background:white; border-radius:14px; padding:28px 24px; text-align:center; box-shadow:0 6px 25px rgba(0,0,0,0.04); transition:all 0.5s;">
-        <span class="skill-icon" style="font-size:2.4rem; color:var(--gold); display:block; margin-bottom:18px;">🎨</span>
-        <h3 style="color:var(--navy); margin-bottom:12px; font-weight:600;">Strak Design</h3>
-        <p>Mode, intuïtieve websites die passen bij uw bedrijf</p>
+    <div class="skills-grid">
+      <div class="skill-card fade-in">
+        <span class="skill-icon">🎨</span>
+        <h3>Strak Design</h3>
+        <p>Moden, intuïtieve websites die passen bij uw merkidentiteit — zonder frutsels, alleen essentie.</p>
       </div>
-      <div class="skill-card fade-in" style="background:white; border-radius:14px; padding:28px 24px; text-align:center; box-shadow:0 6px 25px rgba(0,0,0,0.04); transition:all 0.5s;">
-        <span class="skill-icon" style="font-size:2.4rem; color:var(--gold); display:block; margin-bottom:18px;">📱</span>
-        <h3 style="color:var(--navy); margin-bottom:12px; font-weight:600;">Volledig Mobiel</h3>
-        <p>Perfect voor telefoon, tablets en laptops.</p>
+      <div class="skill-card fade-in">
+        <span class="skill-icon">📱</span>
+        <h3>Volledig Mobiel</h3>
+        <p>Perfect op smartphones, tablets en laptops — want 80% van uw klanten bezoekt u via hun telefoon.</p>
       </div>
-      <div class="skill-card fade-in" style="background:white; border-radius:14px; padding:28px 24px; text-align:center; box-shadow:0 6px 25px rgba(0,0,0,0.04); transition:all 0.5s;">
-        <span class="skill-icon" style="font-size:2.4rem; color:var(--gold); display:block; margin-bottom:18px;">⚡</span>
-        <h3 style="color:var(--navy); margin-bottom:12px; font-weight:600;">Razendsnel</h3>
-        <p>Geoptimaliseerd voor snelheid & comfort.</p>
+      <div class="skill-card fade-in">
+        <span class="skill-icon">⚡</span>
+        <h3>Razendsnel</h3>
+        <p>Geoptimaliseerd voor snelheid & SEO — want elke seconde telt. Geen wachten, alleen resultaat.</p>
       </div>
-      <div class="skill-card fade-in" style="background:white; border-radius:14px; padding:28px 24px; text-align:center; box-shadow:0 6px 25px rgba(0,0,0,0.04); transition:all 0.5s;">
-        <span class="skill-icon" style="font-size:2.4rem; color:var(--gold); display:block; margin-bottom:18px;">🛠️</span>
-        <h3 style="color:var(--navy); margin-bottom:12px; font-weight:600;">Eenvoudig Beheer</h3>
-        <p>U leert zelf tekst en afbeeldingen aanpassen.</p>
+      <div class="skill-card fade-in">
+        <span class="skill-icon">🛠️</span>
+        <h3>Eenvoudig Beheer</h3>
+        <p>U leert zelf tekst en afbeeldingen aanpassen — geen developer nodig. We geven u een eenvoudige handleiding.</p>
       </div>
     </div>
   </section>
@@ -517,22 +549,17 @@
       <div class="process-step fade-in">
         <div class="step-number">1</div>
         <h3>Kennismaken</h3>
-        <p>Geen verplichtingen — gewoon een vrijblijvend gesprek.</p>
+        <p>Geen verplichtingen — gewoon een vrijblijvend gesprek over uw doelen.</p>
       </div>
       <div class="process-step fade-in">
         <div class="step-number">2</div>
         <h3>Ontwerp & Opbouw</h3>
-        <p>Wij bouwen — u feedback. Elke stap transparant.</p>
+        <p>Wij bouwen — u feedback. Elke stap is transparant en samen bekeken.</p>
       </div>
       <div class="process-step fade-in">
         <div class="step-number">3</div>
         <h3>Opleveren</h3>
-        <p>Uw site live, getest en klaar — met handleiding.</p>
-      </div>
-      <div class="process-step fade-in">
-        <div class="step-number">4</div>
-        <h3>Groei</h3>
-        <p>Wij blijven support geven — zodat uw site meegroeit.</p>
+        <p>Uw site live, getest en klaar — met een korte handleiding.</p>
       </div>
     </div>
   </section>
@@ -540,7 +567,7 @@
   <section id="contact" class="contact fade-in">
     <h2 class="section-title fade-in">Laten we kennismaken</h2>
     <p style="text-align: center; max-width: 680px; margin: 0 auto 40px; font-size: 1.15rem;">
-      Geen verplichtingen — gewoon een vrijblijvend gesprek.
+      Geen jargon, geen verplichtingen — gewoon een vrijblijvend gesprek.
     </p>
     
     <form class="contact-form fade-in" action="https://formspree.io/f/YOUR-FORM-ID" method="POST">
